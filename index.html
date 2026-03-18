@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Site Under Construction</title>
+    <style>
+        :root {
+            --primary-color: #f31212;
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* The Animation */
+        .anim {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; color: var(--primary-color); }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Simple animation for a technical touch */
+        .gear {
+            display: inline-block;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="container">
+        <div class="anim">
+            <span class="gear">↺</span>
+        </div>
+        <h1>Under Construction</h1>
+        <p>currently working hard to bring you a better experience.<br> 
+           Hang tight, we’ll be live soon!</p>
+
+        <div class="contact-info">
+            <p>Need to reach us? <br>
+            Email: <a href="mailto:Romeokambela@gmail.com">Romeokambela@gmail.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; <span id="year"></span> Romeokambela™. All Rights Reserved.
+    </footer>
+
+    <script>
+        // To atomatically update the year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>
