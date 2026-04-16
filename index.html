@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <h1>PULA BANK</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="servicesNewAccount.html">Services</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg" alt="user icon"></a></li>
+                </ul>
+            </nav>
+    </header>
+    
+    <!-- CAROUSEL -->
+    <div class="carouseltop">
+        <section class="Carousel">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active">
+                        <img src="images/button-active.png" class="img-active" alt="Active">
+                        <img src="images/button-inactive.png" class="img-inactive" alt="Inactive">
+                    </button>
+    
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1">
+                        <img src="images/button-active.png" class="img-active" alt="Active">
+                        <img src="images/button-inactive.png" class="img-inactive" alt="Inactive">
+                    </button>
+                </div>
+    
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/banner/c1.png" class="d-block w-100" style="height: 50vh; object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner/c2.png" class="d-block w-100" style="height: 50vh; object-fit: cover;">
+                    </div>
+                </div>
+    
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev"
+                    style="background-color: transparent;">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next"
+                    style="background-color: transparent;">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+    </div>
 
+    <hr>
+
+    <main>
+        
+        <search></search>
+
+        <section class="container-cards">
+            <div class="card">
+                <img src="images/card1.png" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Personal Banking</h5>
+                    <p class="card-text">Manage your personal finances with ease and convenience.</p>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer>
+        <section class="footer">
+            <h1>Jobs</h1>
+            <a href="mailto:hr@pulabank.com">hr@pulabank.com</a>
+            <a href="https://www.pulabank.com/careers" target="_blank">Vacancies</a>
+        </section>
+
+        <section class="footer">
+            <h1>Social</h1>
+            <a href="mailto:info@pulabank.com">info@pulabank.com</a>
+            <a href="https://www.facebook.com/pulabank" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com/pulabank" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/company/pulabank" target="_blank">LinkedIn</a>
+        </section>
+
+        <section class="footer">
+            <h1>Legal</h1>
+            <a href="mailto:legal@pulabank.com">legal@pulabank.com</a>
+            <a href="https://www.pulabank.com/legal" target="_blank">Terms and Conditions</a>
+            <a href="https://www.pulabank.com/legal" target="_blank">Privacy Policy</a>
+            <a href="https://www.pulabank.com/legal" target="_blank">Cookie Policy</a>
+            <a href="https://www.pulabank.com/legal" target="_blank">Personal customer agreement</a>
+        </section>
+
+        <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
+        <p>&copy; 2026 PULA BANK. All rights reserved.</p>
+    </footer>
 </body>
 </html>
