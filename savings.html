@@ -1,76 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savings</title>
+    <title>Savings | Services</title>
+    <link rel="icon" href="images/logow.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="scripts/formAuth.js"></script>
+    <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
+    <header>
+        <div class="logo-nav">
+            <a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a>
+            <a href="index.html">
+                <h1>PULA BANK</h1>
+            </a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes">
+            </div>
+        </div>
+
+        <div class="accessibility">
+            <img src="images/wheelchair-solid-full.svg" alt="Accessibility Icon" class="accessibility-icon"
+                role="button" id="accessibilityPopover" title="Accessibility Options">
+        </div>
+
+        <nav class="navHeader" id="mainNav">
+            <ul>
+                <li><a href="about.html"><button type="button" class="btn rounded-5 border-2">ABOUT US</button></a></li>
+                <li><a href="services.html"><button type="button" class="btn rounded-5 border-2">SERVICES</button></a>
+                </li>
+                <li><a href="feedback.html"><button type="button" class="btn rounded-5 border-2">FEEDBACK</button></a>
+                </li>
+                <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg"
+                            alt="user icon"></a></li>
+            </ul>
+        </nav>
+
+
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="d-none" id="AccessibilityOptionsContent">
+        <div class="d-grid gap-2">
+            <p type="button"><span><img src="images/eye-low-vision-solid-full.svg" class="img-logo"
+                        alt="High Contrast Icon"></span> High Contrast</p>
+            <p type="button"><span><img src="images/ear-deaf-solid-full.svg" class="img-logo"
+                        alt="Text-to-Speech Icon"></span> Text-to-Speech</p>
+        </div>
+    </div>
+
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Services</a></li>
-        <li class="breadcrumb-item active">Open an Account</li>
+        <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+        <li class="breadcrumb-item active">Savings</li>
     </ul>
 
-    <main>
-        <section class="SecondaryNav">
-            <nav>
-                <ul>
-                    <li><a href="Credit.html">Credit</a></li>
-                    <li><a href="debit.html">Debit</a></li>
-                    <li><a href="savings.html">Savings</a></li>
-                    <li><a href="wallet.html">Wallet</a></li>
-                </ul>
-            </nav>
-        </section>
+    <div class="cdsw-layout">
+        <main>
+            <section class="SecondaryNav">
+                <nav>
+                    <ul>
+                        <li><a href="Credit.html"><button type="button" class="btnss">Credit</button></a></li>
+                        <li><a href="debit.html"><button type="button" class="btnss">Debit</button></a></li>
+                        <li><a href="savings.html"><button type="button" class="btnss active">Savings</button></a></li>
+                        <li><a href="wallet.html"><button type="button" class="btnss">Wallet</button></a></li>
+                    </ul>
+                </nav>
+            </section>
 
-        <form action="" method="get">
-            <input type="text" name="name" placeholder="Enter your name" required>
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <input type="tel" name="phone" placeholder="Enter your phone number" required>
-            <input type="number" name="id" placeholder="Enter your ID number" required>
-            <input type="date" name="dob" placeholder="Enter your date of birth" required>
-            <button type="submit">Submit</button>
-        </form>
-    </main>
+            <div class="bank-application">
+                <div class="ba-wrap">
+                    <form action="#" method="post" id="bankForm" enctype="multipart/form-data"
+                        onsubmit="return baSubmit()">
 
-    <aside>
-        <h2>Got an Account?</h2>
-        <div class="bankcard">
+                        <!-- Progress -->
+                        <div class="ba-progress-track">
+                            <div class="ba-progress-fill" id="ba-pbar" style="width: 20%"></div>
+                        </div>
+                        <div class="ba-dots" id="ba-dots"></div>
 
-        </div>
+                        <!-- Step 1: Personal Information -->
+                        <div class="ba-step active" id="ba-step-1">
+                            <div class="ba-step-label">Step 1 of 5</div>
+                            <div class="ba-step-title">Personal information</div>
 
-        <div class="advertisement">
-            <h3>Advertisement</h3>
-            <p>Ad content goes here...</p>
-        </div>
-    </aside>
-    
+                            <div class="ba-field-row">
+                                <div class="ba-field">
+                                    <label for="title">Title</label>
+                                    <select id="title" name="title" required>
+                                        <option value="">Select…</option>
+                                        <option value="mr">Mr.</option>
+                                        <option value="ms">Ms.</option>
+                                        <option value="mrs">Mrs.</option>
+                                        <option value="dr">Dr.</option>
+                                    </select>
+                                </div>
+                                <div class="ba-field">
+                                    <label for="dob">Date of birth</label>
+                                    <input type="date" id="dob" name="dob" required>
+                                </div>
+                            </div>
+                            <div class="ba-field">
+                                <label for="full_name">Full legal name <span>(as per ID)</span></label>
+                                <input type="text" id="full_name" name="full_name" placeholder="e.g. Kagiso Modise"
+                                    required>
+                            </div>
+                            <div class="ba-field">
+                                <label for="id_number">National ID (Omang) or passport number</label>
+                                <input type="text" id="id_number" name="id_number" placeholder="e.g. 501234567"
+                                    required>
+                            </div>
+                            <div class="ba-btn-row">
+                                <button type="button" class="ba-btn-next" onclick="baGoTo(2)">Continue →</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Contact Details -->
+                        <div class="ba-step" id="ba-step-2">
+                            <div class="ba-step-label">Step 2 of 5</div>
+                            <div class="ba-step-title">Contact details</div>
+
+                            <div class="ba-field">
+                                <label for="phone">Mobile phone number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+267 7X XXX XXX" required>
+                            </div>
+                            <div class="ba-field">
+                                <label for="email">Email address</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="ba-field">
+                                <label for="address">Physical residential address</label>
+                                <input type="text" id="address" name="address"
+                                    placeholder="House no., street, ward, town" required>
+                            </div>
+                            <div class="ba-btn-row">
+                                <button type="button" class="ba-btn-back" onclick="baGoTo(1)">←</button>
+                                <button type="button" class="ba-btn-next" onclick="baGoTo(3)">Continue →</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Employment & Financials -->
+                        <div class="ba-step" id="ba-step-3">
+                            <div class="ba-step-label">Step 3 of 5</div>
+                            <div class="ba-step-title">Employment & financials</div>
+
+                            <div class="ba-field">
+                                <label for="employment_status">Employment status</label>
+                                <select id="employment_status" name="employment_status">
+                                    <option value="employed">Employed</option>
+                                    <option value="self_employed">Self-Employed</option>
+                                    <option value="unemployed">Unemployed</option>
+                                    <option value="student">Student</option>
+                                </select>
+                            </div>
+                            <div class="ba-field">
+                                <label for="income">Gross monthly income (BWP)</label>
+                                <input type="number" id="income" name="income" placeholder="0.00">
+                            </div>
+                            <div class="ba-field">
+                                <label for="source_funds">Primary source of funds</label>
+                                <select id="source_funds" name="source_funds">
+                                    <option value="salary">Salary</option>
+                                    <option value="business">Business Profits</option>
+                                    <option value="investment">Investments</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="ba-btn-row">
+                                <button type="button" class="ba-btn-back" onclick="baGoTo(2)">←</button>
+                                <button type="button" class="ba-btn-next" onclick="baGoTo(4)">Continue →</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Account Preferences -->
+                        <div class="ba-step" id="ba-step-4">
+                            <div class="ba-step-label">Step 4 of 5</div>
+                            <div class="ba-step-title">Account preferences</div>
+
+                            <div class="ba-field">
+                                <label>Desired account type</label>
+                                <div class="ba-acc-options">
+                                    <div class="ba-acc-opt selected" onclick="baSelectAcc(this)">
+                                        <input type="radio" name="account_type" value="savings" checked>
+                                        <div class="ba-opt-name">Savings</div>
+                                        <div class="ba-opt-desc">Earn interest</div>
+                                    </div>
+                                    <div class="ba-acc-opt" onclick="baSelectAcc(this)">
+                                        <input type="radio" name="account_type" value="current">
+                                        <div class="ba-opt-name">Current</div>
+                                        <div class="ba-opt-desc">Day-to-day use</div>
+                                    </div>
+                                    <div class="ba-acc-opt" onclick="baSelectAcc(this)">
+                                        <input type="radio" name="account_type" value="fixed">
+                                        <div class="ba-opt-name">Fixed deposit</div>
+                                        <div class="ba-opt-desc">Grow savings</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label class="ba-check-row">
+                                <input type="checkbox" id="debit_card" name="debit_card">
+                                <div>
+                                    <div class="ba-cl-title">Request a physical debit card</div>
+                                    <div class="ba-cl-hint">Delivered to your registered address</div>
+                                </div>
+                            </label>
+
+                            <div class="ba-btn-row">
+                                <button type="button" class="ba-btn-back" onclick="baGoTo(3)">←</button>
+                                <button type="button" class="ba-btn-next" onclick="baGoTo(5)">Continue →</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: KYC Documents -->
+                        <div class="ba-step" id="ba-step-5">
+                            <div class="ba-step-label">Step 5 of 5</div>
+                            <div class="ba-step-title">KYC documents</div>
+
+                            <div class="ba-field">
+                                <label>Identity document <span>(Omang or passport)</span></label>
+                                <div class="ba-upload" id="ba-ub-id">
+                                    <input type="file" id="upload_id" name="upload_id" accept="image/*,application/pdf"
+                                        onchange="baMarkUpload('ba-ub-id', this)" required>
+                                    <div class="ba-ub-label">Click to upload</div>
+                                    <div class="ba-ub-hint">JPG, PNG or PDF · max 5 MB</div>
+                                </div>
+                            </div>
+                            <div class="ba-field">
+                                <label>Proof of residence <span>(utility bill or affidavit)</span></label>
+                                <div class="ba-upload" id="ba-ub-res">
+                                    <input type="file" id="upload_residence" name="upload_residence"
+                                        accept="image/*,application/pdf" onchange="baMarkUpload('ba-ub-res', this)"
+                                        required>
+                                    <div class="ba-ub-label">Click to upload</div>
+                                    <div class="ba-ub-hint">JPG, PNG or PDF · max 5 MB</div>
+                                </div>
+                            </div>
+                            <div class="ba-btn-row">
+                                <button type="button" class="ba-btn-back" onclick="baGoTo(4)">←</button>
+                                <button type="button" class="ba-btn-next" onclick="baSubmit()">Submit
+                                    application</button>
+                            </div>
+                        </div>
+
+                        <!-- Success state -->
+                        <div class="ba-success" id="ba-success">
+                            <div class="ba-success-icon">✓</div>
+                            <div class="ba-success-title">Application submitted</div>
+                            <div class="ba-success-msg">Thank you — your application is under review. You'll receive
+                                confirmation via email and SMS within 2–3 business days.</div>
+                            <div class="ba-ref-badge" id="ba-ref"></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <aside class="cdsw-aside">
+            <h2>Got an Account?</h2>
+            <div class="dash-card" id="dashCard">
+                <div class="dash-card-top">
+                    <span class="dash-card-scheme">VISA</span>
+                    <span class="dash-card-type" id="dashCardType">Debit</span>
+                </div>
+                <div class="dash-card-number">1234 5678 9101 2131 4151</div>
+                <div class="dash-card-strip"></div>
+            </div>
+
+            <div class="advertisement">
+                <h3>Advertisement</h3>
+            </div>
+        </aside>
+    </div>
+
 
     <footer>
-        <section class="footer">
+        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" class="fot-img-logo"></a>
+        <section class="footer" id="f1">
             <h1>Jobs</h1>
             <a href="mailto:hr@pulabank.com">hr@pulabank.com</a>
             <a href="https://www.pulabank.com/careers" target="_blank">Vacancies</a>
         </section>
 
-        <section class="footer">
+        <section class="footer" id="f2">
             <h1>Social</h1>
-            <a href="https://www.facebook.com/pulabank" target="_blank">Facebook</a>
-            <a href="https://www.twitter.com/pulabank" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/company/pulabank" target="_blank">LinkedIn</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/facebook-brands-solid-full.svg" alt="Facebook"></a>
+                <a href="https://www.twitter.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/x-twitter-brands-solid-full.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/company/pulabank" target="_blank"><img
+                        style="width: 30px; height: 30px;" src="images/square-linkedin-brands-solid-full.svg"
+                        alt="LinkedIn"></a>
+            </div>
         </section>
 
-        <section class="footer">
+        <section class="footer" id="f3">
             <h1>Legal</h1>
             <a href="mailto:legal@pulabank.com">legal@pulabank.com</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Terms and Conditions</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Privacy Policy</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Cookie Policy</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Personal customer agreement</a>
+            <a href="legal.html#leg-terms">Terms and Conditions</a>
+            <a href="legal.html#leg-policy">Privacy Policy</a>
+            <a href="legal.html#leg-cookie">Cookie Policy</a>
+            <a href="legal.html#leg-customer">Personal customer agreement</a>
         </section>
 
-        <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
-        <p>&copy; 2026 PULA BANK. All rights reserved.</p>
+        <section class="footer" id="f4">
+            <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
+            <p class="greytext">&copy; 2026 PULA BANK. All rights reserved.</p>
+        </section>
+
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- POPOVER SCRIPTS for the accessibility button -->
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popoverTrigger = document.getElementById('accessibilityPopover');
+            const popoverContent = document.getElementById('AccessibilityOptionsContent');
+
+            new bootstrap.Popover(popoverTrigger, {
+                html: true,
+                sanitize: false, // Allows custom buttons and actions inside the popover
+                content: popoverContent.innerHTML,
+                placement: 'bottom' // Adjust placement (top, bottom, left, right) as needed
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mySwitch = document.getElementById('mySwitch');
+
+            // Function to apply the theme
+            function updateTheme() {
+                if (mySwitch.checked) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light');
+                }
+            }
+
+            // Run on initial load to match the default checked state
+            updateTheme();
+
+            // Listen for changes on the switch
+            mySwitch.addEventListener('change', updateTheme);
+        });
+    </script>
 </body>
+
 </html>

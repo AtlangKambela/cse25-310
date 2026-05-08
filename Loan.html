@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Loan</title>
+    <link rel="icon" href="images/logow.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="scripts/formAuth.js"></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-nav">
+            <a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a>
+            <a href="index.html">
+                <h1>PULA BANK</h1>
+            </a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes">
+            </div>
+        </div>
+
+        <div class="accessibility">
+            <img src="images/wheelchair-solid-full.svg" alt="Accessibility Icon" class="accessibility-icon"
+                role="button" id="accessibilityPopover" title="Accessibility Options">
+        </div>
+
+        <nav class="navHeader" id="mainNav">
+            <ul>
+                <li><a href="about.html"><button type="button" class="btn rounded-5 border-2">ABOUT US</button></a></li>
+                <li><a href="services.html"><button type="button" class="btn rounded-5 border-2">SERVICES</button></a>
+                </li>
+                <li><a href="feedback.html"><button type="button" class="btn rounded-5 border-2">FEEDBACK</button></a>
+                </li>
+                <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg"
+                            alt="user icon"></a></li>
+            </ul>
+        </nav>
+
+
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="d-none" id="AccessibilityOptionsContent">
+        <div class="d-grid gap-2">
+            <p type="button"><span><img src="images/eye-low-vision-solid-full.svg" class="img-logo"
+                        alt="High Contrast Icon"></span> High Contrast</p>
+            <p type="button"><span><img src="images/ear-deaf-solid-full.svg" class="img-logo"
+                        alt="Text-to-Speech Icon"></span> Text-to-Speech</p>
+        </div>
+    </div>
+
+    <div class="d-none" id="AccessibilityOptionsContent">
+        <div class="d-grid gap-2">
+            <p type="button"><span><img src="images/eye-low-vision-solid-full.svg" class="img-logo" alt="High Contrast Icon"></span> High Contrast</p>
+            <p type="button"><span><img src="images/ear-deaf-solid-full.svg" class="img-logo" alt="Text-to-Speech Icon"></span> Text-to-Speech</p>
+        </div>
+    </div>
+
+    <main class="loan-wrap">
+
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+            <li class="breadcrumb-item active">Get Loan</li>
+        </ul>
+
+        <!-- Tabs -->
+        <div class="SecondaryNav">
+            <nav>
+                <ul>
+                    <li><button type="button" class="btnss active" onclick="loanSwitchTab('personal', this)">Personal</button></li>
+                    <li><button type="button" class="btnss" onclick="loanSwitchTab('business', this)">Business</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="loan-content-grid">
+
+            <!-- ===== PERSONAL LOAN TAB ===== -->
+            <div class="loan-panel active" id="loan-tab-personal">
+                <div class="loan-form-wrap">
+                    <h2 class="loan-title">Personal Loan Application</h2>
+                    <h3 class="loan-subtitle">FORM</h3>
+
+                    <form id="personalLoanForm">
+
+                        <div class="loan-field-row">
+                            <label for="pl-name">FULL NAME:</label>
+                            <input type="text" id="pl-name" placeholder="Add text">
+                        </div>
+
+                        <div class="loan-field-row">
+                            <label for="pl-amount">LOAN AMOUNT:</label>
+                            <input type="number" id="pl-amount" placeholder="Add text">
+                        </div>
+
+                        <div class="loan-field-row">
+                            <label for="pl-purpose">LOAN PURPOSE:</label>
+                            <textarea id="pl-purpose" rows="4" placeholder="Add text"></textarea>
+                        </div>
+
+                        <div class="loan-checkboxes">
+                            <label class="loan-check">
+                                <input type="checkbox" id="pl-employed">
+                                I am currently employed
+                            </label>
+                            <label class="loan-check">
+                                <input type="checkbox" id="pl-account">
+                                I hold an active Pula Bank account
+                            </label>
+                            <label class="loan-check">
+                                <input type="checkbox" id="pl-terms">
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+
+                        <button type="button" class="loan-apply-btn" onclick="loanValidate('personal')">Apply</button>
+
+                    </form>
+
+                    <!-- Progress dots -->
+                    <div class="loan-dots">
+                        <span class="loan-dot active"></span>
+                        <span class="loan-dot active"></span>
+                        <span class="loan-dot"></span>
+                        <span class="loan-dot"></span>
+                        <span class="loan-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== BUSINESS LOAN TAB ===== -->
+            <div class="loan-panel" id="loan-tab-business">
+                <div class="loan-form-wrap">
+                    <h2 class="loan-title">Business Loan Application</h2>
+                    <h3 class="loan-subtitle">FORM</h3>
+
+                    <form id="businessLoanForm">
+
+                        <div class="loan-field-row">
+                            <label for="bl-name">BUSINESS NAME:</label>
+                            <input type="text" id="bl-name" placeholder="Add text">
+                        </div>
+
+                        <div class="loan-field-row">
+                            <label for="bl-reg">REGISTRATION NO:</label>
+                            <input type="text" id="bl-reg" placeholder="Add text">
+                        </div>
+
+                        <div class="loan-field-row">
+                            <label for="bl-amount">LOAN AMOUNT:</label>
+                            <input type="number" id="bl-amount" placeholder="Add text">
+                        </div>
+
+                        <div class="loan-field-row">
+                            <label for="bl-purpose">LOAN PURPOSE:</label>
+                            <textarea id="bl-purpose" rows="4" placeholder="Add text"></textarea>
+                        </div>
+
+                        <div class="loan-checkboxes">
+                            <label class="loan-check">
+                                <input type="checkbox" id="bl-registered">
+                                My business is registered in Botswana
+                            </label>
+                            <label class="loan-check">
+                                <input type="checkbox" id="bl-account">
+                                I hold an active Pula Bank business account
+                            </label>
+                            <label class="loan-check">
+                                <input type="checkbox" id="bl-terms">
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+
+                        <button type="button" class="loan-apply-btn" onclick="loanValidate('business')">Apply</button>
+
+                    </form>
+
+                    <!-- Progress dots -->
+                    <div class="loan-dots">
+                        <span class="loan-dot active"></span>
+                        <span class="loan-dot active"></span>
+                        <span class="loan-dot"></span>
+                        <span class="loan-dot"></span>
+                        <span class="loan-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad sidebar -->
+            <aside class="loan-ad">
+                <div class="loan-ad-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                    <p>Advertisement</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" class="fot-img-logo"></a>
+        <section class="footer" id="f1">
+            <h1>Jobs</h1>
+            <a href="mailto:hr@pulabank.com">hr@pulabank.com</a>
+            <a href="https://www.pulabank.com/careers" target="_blank">Vacancies</a>
+        </section>
+
+        <section class="footer" id="f2">
+            <h1>Social</h1>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/facebook-brands-solid-full.svg" alt="Facebook"></a>
+                <a href="https://www.twitter.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/x-twitter-brands-solid-full.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/company/pulabank" target="_blank"><img
+                        style="width: 30px; height: 30px;" src="images/square-linkedin-brands-solid-full.svg"
+                        alt="LinkedIn"></a>
+            </div>
+        </section>
+
+        <section class="footer" id="f3">
+            <h1>Legal</h1>
+            <a href="mailto:legal@pulabank.com">legal@pulabank.com</a>
+            <a href="legal.html#leg-terms">Terms and Conditions</a>
+            <a href="legal.html#leg-policy">Privacy Policy</a>
+            <a href="legal.html#leg-cookie">Cookie Policy</a>
+            <a href="legal.html#leg-customer">Personal customer agreement</a>
+        </section>
+
+        <section class="footer" id="f4">
+            <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
+            <p class="greytext">&copy; 2026 PULA BANK. All rights reserved.</p>
+        </section>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- POPOVER SCRIPTS for the accessibility button -->
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popoverTrigger = document.getElementById('accessibilityPopover');
+            const popoverContent = document.getElementById('AccessibilityOptionsContent');
+
+            new bootstrap.Popover(popoverTrigger, {
+                html: true,
+                sanitize: false, // Allows custom buttons and actions inside the popover
+                content: popoverContent.innerHTML,
+                placement: 'bottom' // Adjust placement (top, bottom, left, right) as needed
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mySwitch = document.getElementById('mySwitch');
+
+            // Function to apply the theme
+            function updateTheme() {
+                if (mySwitch.checked) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light');
+                }
+            }
+
+            // Run on initial load to match the default checked state
+            updateTheme();
+
+            // Listen for changes on the switch
+            mySwitch.addEventListener('change', updateTheme);
+        });
+    </script>
+</body>
+
+</html>

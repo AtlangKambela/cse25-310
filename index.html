@@ -1,57 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="icon" href="images/logow.png" type="image/png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <script src="scripts/formAuth.js"></script>
+    <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>PULA BANK</h1>
-        <nav>
+        <div class="logo-nav">
+            <a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a>
+            <a href="index.html">
+                <h1>PULA BANK</h1>
+            </a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes">
+            </div>
+        </div>
+
+        <div class="accessibility">
+            <img src="images/wheelchair-solid-full.svg" alt="Accessibility Icon" class="accessibility-icon"
+                role="button" id="accessibilityPopover" title="Accessibility Options">
+        </div>
+
+        <nav class="navHeader" id="mainNav">
             <ul>
-                <li><a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="servicesNewAccount.html">Services</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg" alt="user icon"></a>
+                <li><a href="about.html"><button type="button" class="btn rounded-5 border-2">ABOUT US</button></a></li>
+                <li><a href="services.html"><button type="button" class="btn rounded-5 border-2">SERVICES</button></a>
                 </li>
+                <li><a href="feedback.html"><button type="button" class="btn rounded-5 border-2">FEEDBACK</button></a>
+                </li>
+                <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg"
+                            alt="user icon"></a></li>
             </ul>
         </nav>
+
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
-    
+
+    <div class="d-none" id="AccessibilityOptionsContent">
+        <div class="d-grid gap-2">
+            <p type="button"><span><img src="images/eye-low-vision-solid-full.svg" class="img-logo"
+                        alt="High Contrast Icon"></span> High Contrast</p>
+            <p type="button"><span><img src="images/ear-deaf-solid-full.svg" class="img-logo"
+                        alt="Text-to-Speech Icon"></span> Text-to-Speech</p>
+        </div>
+    </div>
+
     <!-- CAROUSEL -->
     <div class="carouseltop">
         <section class="Carousel">
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
-    
-                <!-- Indicators/dots -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+                <!-- Indicators/dots — must match number of slides (3) -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"
+                        aria-current="true">
                         <img src="images/button-active.png" class="img-active" alt="Active">
                         <img src="images/button-inactive.png" class="img-inactive" alt="Inactive">
                     </button>
-    
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1">
                         <img src="images/button-active.png" class="img-active" alt="Active">
                         <img src="images/button-inactive.png" class="img-inactive" alt="Inactive">
                     </button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2">
+                        <img src="images/button-active.png" class="img-active" alt="Active">
+                        <img src="images/button-inactive.png" class="img-inactive" alt="Inactive">
+                    </button>
                 </div>
-    
+
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
+
                     <div class="carousel-item active">
-                        <img src="images/banner/c1.png" class="d-block w-100" style="height: 50vh; object-fit: cover;">
+                        <img src="images/banner/c3.png" class="d-block w-100" style="height: 70vh; object-fit: cover;">
+                        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" id="cau-img-logo"></a>
+                        <div class="carousel-caption-custom">
+                            <h1>Smart Banking, Simplified</h1>
+                            <p>Manage your finances effortlessly with Pula Bank's secure digital platform — anytime,
+                                anywhere.</p>
+                        </div>
                     </div>
+
                     <div class="carousel-item">
-                        <img src="images/banner/c2.png" class="d-block w-100" style="height: 50vh; object-fit: cover;">
+                        <img src="images/banner/c2.png" class="d-block w-100" style="height: 70vh; object-fit: cover;">
+                        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" id="cau-img-logo2"></a>
+                        <div class="carousel-caption-custom">
+                            <h1>Loans Tailored for You</h1>
+                            <p>From personal loans to home finance, Pula Bank offers flexible solutions to fit your
+                                goals
+                                and lifestyle.</p>
+
+                        </div>
                     </div>
+
+                    <div class="carousel-item">
+                        <img src="images/banner/c1.png" class="d-block w-100" style="height: 70vh; object-fit: cover;">
+                        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" id="cau-img-logo3"></a>
+                        <div class="carousel-caption-custom">
+                            <h1>Your Future Starts Here</h1>
+                            <p>Grow your savings and invest with confidence. Pula Bank is your trusted partner in
+                                building
+                                lasting wealth.</p>
+                        </div>
+                    </div>
+
                 </div>
-    
-                <!-- Left and right controls/icons -->
+
+                <!-- Left and right controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev"
                     style="background-color: transparent;">
                     <span class="carousel-control-prev-icon"></span>
@@ -60,6 +128,7 @@
                     style="background-color: transparent;">
                     <span class="carousel-control-next-icon"></span>
                 </button>
+
             </div>
         </section>
     </div>
@@ -67,55 +136,459 @@
     <hr>
 
     <main>
-        
-        <search>
-            <form action="" method="post">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search for products, services, and more..." aria-label="Search"
-                        aria-describedby="button-search">
-                    <button class="btn btn-outline-secondary" type="submit" id="button-search">Search</button>
-                </div>
-            </form>
+        <a href="#accessibilityPopover"><img src="images/arrow-up-wide-short-solid-full.svg" alt="Back to Top Icon" id="backToTop" role="button" title="Back to Top"></a>
+
+        <search class="search-container">
+            <input type="text" class="search-bar" placeholder="Search..">
         </search>
 
         <section class="container-cards">
-            <div class="card">
-                <img src="images/card1.png" class="card-img-top" alt="Card 1">
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Personal Banking</h2>
                 <div class="card-body">
-                    <h5 class="card-title">Personal Banking</h5>
-                    <p class="card-text">Manage your personal finances with ease and convenience.</p>
+                    <p class="card-text">Everyday accounts, debit cards, and tools to manage your personal finances with
+                        ease.</p>
                 </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-personal">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Savings Accounts</h2>
+                <div class="card-body">
+                    <p class="card-text">Grow your money with competitive interest rates and flexible savings plans
+                        tailored to your goals.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-savings">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Personal Loans</h2>
+                <div class="card-body">
+                    <p class="card-text">Access affordable personal loans with fixed repayment terms to cover life's big
+                        moments.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-loans">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Home Finance</h2>
+                <div class="card-body">
+                    <p class="card-text">Turn your dream home into a reality with our flexible mortgage and home loan
+                        solutions.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-home">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Business Banking</h2>
+                <div class="card-body">
+                    <p class="card-text">Dedicated accounts, credit facilities, and financial tools built to support
+                        your business growth.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-business">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Mobile & Online Banking</h2>
+                <div class="card-body">
+                    <p class="card-text">Bank securely from anywhere using our mobile app and online portal, available
+                        24/7.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-digital">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Investments</h2>
+                <div class="card-body">
+                    <p class="card-text">Build long-term wealth with our range of investment products, from unit trusts
+                        to fixed deposits.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-invest">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Insurance</h2>
+                <div class="card-body">
+                    <p class="card-text">Protect what matters most with life, vehicle, home, and funeral cover options
+                        through Pula Bank.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-insurance">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Foreign Exchange</h2>
+                <div class="card-body">
+                    <p class="card-text">Send and receive money internationally with competitive exchange rates and low
+                        transfer fees.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-forex">Learn More</button>
+            </div>
+
+            <div class="card-main">
+                <h2><span><img src="images/logow.png" class="card-img-top" alt=""></span>Student Account</h2>
+                <div class="card-body">
+                    <p class="card-text">A fee-free account designed for students, with easy access to funds and
+                        exclusive youth benefits.</p>
+                </div>
+                <button data-bs-toggle="modal" data-bs-target="#modal-student">Learn More</button>
             </div>
 
         </section>
-        
+
+
+        <!-- ═══════════════════════════════ MODALS ═══════════════════════════════ -->
+
+        <!-- Personal Banking -->
+        <div class="modal fade" id="modal-personal" tabindex="-1" aria-labelledby="modal-personal-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-personal-label">Personal Banking</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Our Personal Banking accounts give you full control of your day-to-day finances. Enjoy a free
+                            cheque account, contactless Visa debit card, and access to over 50 ATMs nationwide.</p>
+                        <ul>
+                            <li>Zero monthly fees on qualifying accounts</li>
+                            <li>Instant notifications on every transaction</li>
+                            <li>Cardless cash withdrawals via the Pula Bank app</li>
+                            <li>Budgeting tools built into your dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Open an Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Savings -->
+        <div class="modal fade" id="modal-savings" tabindex="-1" aria-labelledby="modal-savings-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-savings-label">Savings Accounts</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Whether you're saving for a rainy day or a long-term goal, Pula Bank offers savings products
+                            with returns that work as hard as you do.</p>
+                        <ul>
+                            <li>Interest rates up to 6.5% per annum</li>
+                            <li>No minimum balance on standard savings accounts</li>
+                            <li>Fixed deposit options from 30 to 365 days</li>
+                            <li>Automatic top-up from your cheque account</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Loans -->
+        <div class="modal fade" id="modal-loans" tabindex="-1" aria-labelledby="modal-loans-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-loans-label">Personal Loans</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>From medical emergencies to school fees, Pula Bank personal loans give you fast access to
+                            funds with transparent, fixed repayment terms.</p>
+                        <ul>
+                            <li>Borrow from P5,000 to P500,000</li>
+                            <li>Repayment periods of 12 to 60 months</li>
+                            <li>Fixed interest rates — no surprises</li>
+                            <li>Approval within 48 hours for qualifying customers</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Finance -->
+        <div class="modal fade" id="modal-home" tabindex="-1" aria-labelledby="modal-home-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-home-label">Home Finance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Buying your first home or refinancing an existing one? Pula Bank's home finance team will
+                            guide you every step of the way.</p>
+                        <ul>
+                            <li>Finance up to 90% of property value</li>
+                            <li>Repayment terms up to 25 years</li>
+                            <li>Variable and fixed rate options available</li>
+                            <li>Free property valuation for approved applicants</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Banking -->
+        <div class="modal fade" id="modal-business" tabindex="-1" aria-labelledby="modal-business-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-business-label">Business Banking</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>From sole traders to large enterprises, Pula Bank provides business accounts and credit
+                            solutions to keep your operations running smoothly.</p>
+                        <ul>
+                            <li>Business current and savings accounts</li>
+                            <li>Overdraft and revolving credit facilities</li>
+                            <li>Payroll and bulk payment solutions</li>
+                            <li>Dedicated business relationship manager</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Open a Business Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Banking -->
+        <div class="modal fade" id="modal-digital" tabindex="-1" aria-labelledby="modal-digital-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-digital-label">Mobile & Online Banking</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>The Pula Bank app puts your entire bank in your pocket. Pay bills, transfer money, and track
+                            spending — all from your phone.</p>
+                        <ul>
+                            <li>Available on iOS and Android</li>
+                            <li>Biometric login (fingerprint & Face ID)</li>
+                            <li>Instant peer-to-peer transfers</li>
+                            <li>Bill payments and airtime top-up</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Download the App</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investments -->
+        <div class="modal fade" id="modal-invest" tabindex="-1" aria-labelledby="modal-invest-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-invest-label">Investments</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Make your money work for you with Pula Bank's range of investment products, managed by
+                            experienced financial specialists.</p>
+                        <ul>
+                            <li>Unit trusts with diversified portfolios</li>
+                            <li>Fixed deposits from 30 days onwards</li>
+                            <li>Retirement annuity and pension products</li>
+                            <li>Online portfolio tracking dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Start Investing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insurance -->
+        <div class="modal fade" id="modal-insurance" tabindex="-1" aria-labelledby="modal-insurance-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-insurance-label">Insurance</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pula Bank insurance products give you peace of mind knowing that you and your loved ones are
+                            protected when it matters most.</p>
+                        <ul>
+                            <li>Life and disability cover</li>
+                            <li>Funeral and repatriation cover</li>
+                            <li>Home contents and building insurance</li>
+                            <li>Vehicle and accident cover</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forex -->
+        <div class="modal fade" id="modal-forex" tabindex="-1" aria-labelledby="modal-forex-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-forex-label">Foreign Exchange</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Send money abroad or receive international payments with confidence. Pula Bank offers
+                            real-time exchange rates and fast processing.</p>
+                        <ul>
+                            <li>International wire transfers to 50+ countries</li>
+                            <li>Competitive real-time exchange rates</li>
+                            <li>Foreign currency accounts in USD, GBP, EUR, and ZAR</li>
+                            <li>SWIFT and SADC payment corridors supported</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Send Money</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Account -->
+        <div class="modal fade" id="modal-student" tabindex="-1" aria-labelledby="modal-student-label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-student-label">Student Account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>The Pula Bank Student Account is built for the next generation — giving young Batswana a head
+                            start on financial independence.</p>
+                        <ul>
+                            <li>Zero monthly account fees</li>
+                            <li>Free debit card with contactless payments</li>
+                            <li>BURS/student loan-compatible deposits</li>
+                            <li>Financial literacy resources and tools</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Close</button>
+                        <a href="services.html" class="btn2">Open a Student Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
-        <section class="footer">
+        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" class="fot-img-logo"></a>
+        <section class="footer" id="f1">
             <h1>Jobs</h1>
             <a href="mailto:hr@pulabank.com">hr@pulabank.com</a>
             <a href="https://www.pulabank.com/careers" target="_blank">Vacancies</a>
         </section>
 
-        <section class="footer">
+        <section class="footer" id="f2">
             <h1>Social</h1>
-            <a href="https://www.facebook.com/pulabank" target="_blank">Facebook</a>
-            <a href="https://www.twitter.com/pulabank" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/company/pulabank" target="_blank">LinkedIn</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/facebook-brands-solid-full.svg" alt="Facebook"></a>
+                <a href="https://www.twitter.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/x-twitter-brands-solid-full.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/company/pulabank" target="_blank"><img
+                        style="width: 30px; height: 30px;" src="images/square-linkedin-brands-solid-full.svg"
+                        alt="LinkedIn"></a>
+            </div>
         </section>
 
-        <section class="footer">
+        <section class="footer" id="f3">
             <h1>Legal</h1>
             <a href="mailto:legal@pulabank.com">legal@pulabank.com</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Terms and Conditions</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Privacy Policy</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Cookie Policy</a>
-            <a href="https://www.pulabank.com/legal" target="_blank">Personal customer agreement</a>
+            <a href="legal.html#leg-terms">Terms and Conditions</a>
+            <a href="legal.html#leg-policy">Privacy Policy</a>
+            <a href="legal.html#leg-cookie">Cookie Policy</a>
+            <a href="legal.html#leg-customer">Personal customer agreement</a>
         </section>
 
-        <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
-        <p>&copy; 2026 PULA BANK. All rights reserved.</p>
+        <section class="footer" id="f4">
+            <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
+            <p class="greytext">&copy; 2026 PULA BANK. All rights reserved.</p>
+        </section>
+
     </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- POPOVER SCRIPTS for the accessibility button -->
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popoverTrigger = document.getElementById('accessibilityPopover');
+            const popoverContent = document.getElementById('AccessibilityOptionsContent');
+
+            new bootstrap.Popover(popoverTrigger, {
+                html: true,
+                sanitize: false, // Allows custom buttons and actions inside the popover
+                content: popoverContent.innerHTML,
+                placement: 'bottom' // Adjust placement (top, bottom, left, right) as needed
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mySwitch = document.getElementById('mySwitch');
+
+            // Function to apply the theme
+            function updateTheme() {
+                if (mySwitch.checked) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light');
+                }
+            }
+
+            // Run on initial load to match the default checked state
+            updateTheme();
+
+            // Listen for changes on the switch
+            mySwitch.addEventListener('change', updateTheme);
+        });
+    </script>
+
 </body>
+
 </html>

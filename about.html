@@ -1,46 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="scripts/script.js" defer></script>
+    <link rel="icon" href="images/logow.png" type="image/png">
 </head>
+
 <body>
     <header>
-        <h1>PULA BANK</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="servicesNewAccount.html">Services</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
-                    <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg" alt="user icon"></a></li>
-                </ul>
-            </nav>
+        <div class="logo-nav">
+            <a href="index.html"><img class="img-logo" src="images/logo.png" alt="PULA BANK Logo"></a>
+            <a href="index.html">
+                <h1>PULA BANK</h1>
+            </a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes">
+            </div>
+        </div>
+
+        <div class="accessibility">
+            <img src="images/wheelchair-solid-full.svg" alt="Accessibility Icon" class="accessibility-icon"
+                role="button" id="accessibilityPopover" title="Accessibility Options">
+        </div>
+
+        <nav class="navHeader" id="mainNav">
+            <ul>
+                <li><a href="about.html"><button type="button" class="btn rounded-5 border-2 active21">ABOUT US</button></a></li>
+                <li><a href="services.html"><button type="button" class="btn rounded-5 border-2">SERVICES</button></a>
+                </li>
+                <li><a href="feedback.html"><button type="button" class="btn rounded-5 border-2">FEEDBACK</button></a>
+                </li>
+                <li><a href="account.html"><img class="img-user" src="images/user-icon-inactive.svg"
+                            alt="user icon"></a></li>
+            </ul>
+        </nav>
+
+
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="d-none" id="AccessibilityOptionsContent">
+        <div class="d-grid gap-2">
+            <p type="button"><span><img src="images/eye-low-vision-solid-full.svg" class="img-logo"
+                        alt="High Contrast Icon"></span> High Contrast</p>
+            <p type="button"><span><img src="images/ear-deaf-solid-full.svg" class="img-logo"
+                        alt="Text-to-Speech Icon"></span> Text-to-Speech</p>
+        </div>
+    </div>
+
+    <section class="about-pg">
+        <main class="about-main">
+            <h2>About Us</h2>
+
+            
+
+            <p><img src="images/banner/team.png" alt="Team working together" class="about-img">Welcome to PULA BANK, your trusted financial partner. We are committed to providing exceptional banking
+                services that cater to your unique needs. Our mission is to empower our customers with innovative solutions,
+                personalized service, and a commitment to excellence.<br><br>
+                At PULA BANK, we believe in building strong relationships with our customers. Our team of dedicated
+                professionals is here to assist you with all your banking needs, whether it's opening a new account,
+                applying for a loan, or managing your finances. We strive to create a welcoming and inclusive environment
+                where everyone feels valued and supported.<br><br>
+                Our core values include integrity, customer focus, innovation, and community involvement. We are proud to be
+                a part of the communities we serve and are committed to making a positive impact through various initiatives
+                and partnerships.<br><br>
+                Thank you for choosing PULA BANK. We look forward to serving you and helping you achieve your financial
+                goals.
+            </p>
+        </main>
+
+        <aside class="contact-info">
+            <h2>Contact Us</h2>
+            <p>For inquiries about our services, please contact us:</p>
+            <ul>
+                <li><span><img src="images/email.svg" alt="Email icon" class="inlineIcons"></span>Email: <a href="mailto:info@pulabank.com">info@pulabank.com</a></li>
+                <li><span><img src="images/phone-solid-full.svg" alt="phone icon" class="inlineIcons"></span>Phone: <a href="tel:+2673901234">+267 390 1234</a></li>
+            </ul>
+
+        </aside>
+    </section>
     
-    <main>
-        <h2>About Us</h2>
-        <p>Welcome to PULA BANK, your trusted financial partner. We are committed to providing exceptional banking services that cater to your unique needs. Our mission is to empower our customers with innovative solutions, personalized service, and a commitment to excellence.</p>
-        <p>At PULA BANK, we believe in building strong relationships with our customers. Our team of dedicated professionals is here to assist you with all your banking needs, whether it's opening a new account, applying for a loan, or managing your finances. We strive to create a welcoming and inclusive environment where everyone feels valued and supported.</p>
-        <p>Our core values include integrity, customer focus, innovation, and community involvement. We are proud to be a part of the communities we serve and are committed to making a positive impact through various initiatives and partnerships.</p>
-        <p>Thank you for choosing PULA BANK. We look forward to serving you and helping you achieve your financial goals.</p>
-    </main>
 
-    <aside>
-        <h2>Contact Us</h2>
-        <p>For inquiries about our services, please contact us:</p>
-        <ul>
-            <li>Email: <a href="mailto:info@pulabank.com">info@pulabank.com</a></li>
-            <li>Phone: <a href="tel:+2673901234">+267 390 1234</a></li>
-        </ul>
+    <footer>
+        <a href="index.html"><img src="images/logow.png" alt="PULA BANK Logo" class="fot-img-logo"></a>
+        <section class="footer" id="f1">
+            <h1>Jobs</h1>
+            <a href="mailto:hr@pulabank.com">hr@pulabank.com</a>
+            <a href="https://www.pulabank.com/careers" target="_blank">Vacancies</a>
+        </section>
 
-    </aside>
+        <section class="footer" id="f2">
+            <h1>Social</h1>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/facebook-brands-solid-full.svg" alt="Facebook"></a>
+                <a href="https://www.twitter.com/pulabank" target="_blank"><img style="width: 30px; height: 30px;"
+                        src="images/x-twitter-brands-solid-full.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/company/pulabank" target="_blank"><img
+                        style="width: 30px; height: 30px;" src="images/square-linkedin-brands-solid-full.svg"
+                        alt="LinkedIn"></a>
+            </div>
+        </section>
+
+        <section class="footer" id="f3">
+            <h1>Legal</h1>
+            <a href="mailto:legal@pulabank.com">legal@pulabank.com</a>
+            <a href="legal.html#leg-terms">Terms and Conditions</a>
+            <a href="legal.html#leg-policy">Privacy Policy</a>
+            <a href="legal.html#leg-cookie">Cookie Policy</a>
+            <a href="legal.html#leg-customer">Personal customer agreement</a>
+        </section>
+
+        <section class="footer" id="f4">
+            <p>PULA BANK Botswana Limited (registered number BW00004447900) is regulated by the Bank of Botswana.</p>
+            <p class="greytext">&copy; 2026 PULA BANK. All rights reserved.</p>
+        </section>
+
+    </footer>
 
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- POPOVER SCRIPTS for the accessibility button -->
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popoverTrigger = document.getElementById('accessibilityPopover');
+            const popoverContent = document.getElementById('AccessibilityOptionsContent');
+
+            new bootstrap.Popover(popoverTrigger, {
+                html: true,
+                sanitize: false, // Allows custom buttons and actions inside the popover
+                content: popoverContent.innerHTML,
+                placement: 'bottom' // Adjust placement (top, bottom, left, right) as needed
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mySwitch = document.getElementById('mySwitch');
+
+            // Function to apply the theme
+            function updateTheme() {
+                if (mySwitch.checked) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', 'light');
+                }
+            }
+
+            // Run on initial load to match the default checked state
+            updateTheme();
+
+            // Listen for changes on the switch
+            mySwitch.addEventListener('change', updateTheme);
+        });
+    </script>
 </body>
+
 </html>
