@@ -1904,27 +1904,6 @@ footer a:hover {
         display: block;
     }
 
-    /* Carousel height fix */
-    .carousel-inner img {
-        height: 220px;
-    }
-
-    .carousel-caption-custom {
-        bottom: 16px;
-        right: 12px;
-        left: 12px;
-        padding: 8px 12px;
-    }
-
-    .carousel-caption-custom h1 {
-        font-size: 1rem;
-        margin-bottom: 6px;
-    }
-
-    .carousel-caption-custom p {
-        display: none;
-    }
-
     .btn-caption {
         font-size: 0.75rem;
         padding: 6px 14px;
